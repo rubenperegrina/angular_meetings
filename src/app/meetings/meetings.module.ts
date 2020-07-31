@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { TeamsRoutingModule } from './teams-routing.module';
+import { MeetingsRoutingModule } from './meetings-routing.module';
 import { LayoutComponent } from './layout.component';
 import { ListComponent } from './list.component';
 import { AddEditComponent } from './add-edit.component';
@@ -11,7 +11,7 @@ import { AddEditComponent } from './add-edit.component';
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        TeamsRoutingModule
+        MeetingsRoutingModule
     ],
     declarations: [
         LayoutComponent,
@@ -19,4 +19,4 @@ import { AddEditComponent } from './add-edit.component';
         AddEditComponent
     ]
 })
-export class TeamsModule { }
+export class MeetingsModule { }

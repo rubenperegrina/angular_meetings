@@ -1,8 +1,11 @@
-﻿export class User {
+﻿import { Meeting } from './meeting';
+
+export class User {
     id: string;
-    username: string;
+    userName: string;
     password: string;
     firstName: string;
     lastName: string;
     token: string;
+    meetings: Meeting
 }

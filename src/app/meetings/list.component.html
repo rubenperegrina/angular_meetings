@@ -1,0 +1,34 @@
+<h1>Meetings</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Meeting</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 20%">Name</th>
+            <th style="width: 20%">Start</th>
+            <th style="width: 20%">End</th>
+            <th style="width: 20%">Participants
+            <th style="width: 20%"></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let meeting of meetings">
+            <td>{{meeting.name}}</td>
+            <td>{{meeting.start | date :'short'}}</td>
+            <td>{{meeting.end | date :'short'}}</td>
+            <td>
+                <p *ngFor="let user of meeting.participants">{{user.firstName}} {{user.lastName}}</p>
+            </td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{meeting.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteMeeting(meeting.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="meeting.isDeleting">
+                    <span *ngIf="meeting.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!meeting.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!meetings">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
